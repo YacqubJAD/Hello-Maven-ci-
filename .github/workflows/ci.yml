@@ -42,8 +42,8 @@ jobs:
 
     - name: Build and push Docker image
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-       run: |
-    	docker build -t ghcr.io/yacqubjad/hello-maven:latest .
-    	docker build -t ghcr.io/yacqubjad/hello-maven:${{ github.sha }} .
-    	docker push ghcr.io/yacqubjad/hello-maven:latest
-    	docker push ghcr.io/yacqubjad/hello-maven:${{ github.sha }}
+      run: |
+        docker build -t ghcr.io/yacqubjad/hello-maven:latest .
+        docker build -t ghcr.io/yacqubjad/hello-maven:${{ github.sha }} .
+        docker push ghcr.io/yacqubjad/hello-maven:latest
+        docker push ghcr.io/yacqubjad/hello-maven:${{ github.sha }}
